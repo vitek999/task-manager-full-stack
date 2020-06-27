@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="task-manager-full-stack-jvm-1.0-SNAPSHOT">
+    <output-path>C:\Users\vitek\Projects\java\task-manager-full-stack\build\libs</output-path>
+    <root id="archive" name="task-manager-full-stack-jvm-1.0-SNAPSHOT.jar" />
+  </artifact>
+</component>
