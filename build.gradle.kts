@@ -52,6 +52,12 @@ kotlin {
                 implementation("ch.qos.logback:logback-classic:1.2.3")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serializationVersion")
                 implementation("io.ktor:ktor-locations:$ktorVersion")
+
+                // Database
+                implementation("org.jetbrains.exposed:exposed-core:0.24.1")
+                implementation("org.jetbrains.exposed:exposed-dao:0.24.1")
+                implementation("org.jetbrains.exposed:exposed-jdbc:0.24.1")
+                implementation("mysql:mysql-connector-java:5.1.48")
             }
         }
 

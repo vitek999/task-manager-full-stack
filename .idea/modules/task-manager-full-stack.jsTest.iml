@@ -5,9 +5,9 @@
       <configuration version="3" platform="JavaScript " allPlatforms="JS []" useProjectSettings="false" isTestModule="true" externalProjectId="task-manager-full-stack">
         <dependsOnModuleNames>task-manager-full-stack:commonTest</dependsOnModuleNames>
         <sourceSets>
+          <sourceSet>task-manager-full-stack.jsMain</sourceSet>
           <sourceSet>task-manager-full-stack.commonTest</sourceSet>
           <sourceSet>task-manager-full-stack.commonMain</sourceSet>
-          <sourceSet>task-manager-full-stack.jsMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>jsBrowserTest|task-manager-full-stack:jsTest|js</externalSystemTestTasks>

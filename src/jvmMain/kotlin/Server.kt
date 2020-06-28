@@ -11,9 +11,17 @@ import io.ktor.serialization.json
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import modules.userModule
+import org.jetbrains.exposed.sql.Database
 
 
 fun main() {
+    Database.connect(
+        "jdbc:mysql://localhost:3306/task_manager_db?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+        driver = "com.mysql.jdbc.Driver",
+        user = "root",
+        password = "root"
+    )
+
     val port = 9090
     embeddedServer(Netty, port, module = Application::mainModule).start(wait = true)
 }
