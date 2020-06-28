@@ -1,3 +1,9 @@
+import react.child
+import react.dom.render
+import kotlin.browser.document
+
 fun main() {
-    println("hello from JS asd")
+    render(document.getElementById("root")) {
+        child(App)
+    }
 }
