@@ -2,6 +2,7 @@ import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
 import io.ktor.features.ContentNegotiation
+import io.ktor.locations.Locations
 import io.ktor.response.respondText
 import io.ktor.routing.Routing
 import io.ktor.routing.get
@@ -22,6 +23,7 @@ fun Application.mainModule() {
     install(ContentNegotiation) {
         json()
     }
+    install(Locations)
 
     anotherModule()
     userModule()

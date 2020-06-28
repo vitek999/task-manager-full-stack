@@ -1,19 +1,24 @@
 package routes
 
-import data.dto.UserDto
 import io.ktor.application.call
+import io.ktor.http.HttpStatusCode
+import io.ktor.locations.get
 import io.ktor.response.respond
 import io.ktor.routing.Route
-import io.ktor.routing.get
+import modules.Users
+import modules.users
 
 fun Route.userRoutes() {
-    get("/user") {
-        call.respond(
-            listOf(
-                UserDto(1, "phone", "pass", "first", "last", "about"),
-                UserDto(2, "phone2", "pass2", "first2", "last2", "about2"),
-                UserDto(1, "phone3", "pass3", "first3", "last3", "about3")
-            )
-        )
+    get<Users> {
+        call.respond(users)
+    }
+
+    get<Users.Id> { id ->
+        val u = users.firstOrNull { it.id == id.id }
+        if (u != null) {
+            call.respond(HttpStatusCode.OK, u)
+        } else {
+            call.respond(HttpStatusCode.NoContent)
+        }
     }
 }
