@@ -1,7 +1,9 @@
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
+import io.ktor.features.CORS
 import io.ktor.features.ContentNegotiation
+import io.ktor.http.HttpMethod
 import io.ktor.locations.Locations
 import io.ktor.response.respondText
 import io.ktor.routing.Routing
@@ -31,7 +33,15 @@ fun Application.mainModule() {
     install(ContentNegotiation) {
         json()
     }
+
     install(Locations)
+
+    install(CORS) {
+        method(HttpMethod.Get)
+        method(HttpMethod.Post)
+        method(HttpMethod.Delete)
+        anyHost()
+    }
 
     anotherModule()
     userModule()

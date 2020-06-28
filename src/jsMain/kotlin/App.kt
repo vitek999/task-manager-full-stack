@@ -14,7 +14,7 @@ val App = functionalComponent<RProps> {
 
     useEffect {
         scope.launch {
-            // TODO: Get data from server
+            setUserList(getUsers())
         }
     }
 
